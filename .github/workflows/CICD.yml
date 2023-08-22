@@ -29,5 +29,5 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-        sh -i /home/khakwani/Downloads/Test.pem ec2-user@3.84.245.16 "cd /path/to/your/app && git pull && docker build -t my-app . && docker run -d -p 80:80 my-app"
+        ssh -i awskey ec2-user@3.84.245.16 cd /app && git pull && docker build -t my-app . && docker run -d -p 80:80 my-app"
 
