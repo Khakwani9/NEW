@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+        branches:
+          - main
 
 jobs:
   build:
@@ -29,7 +32,7 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-            ssh -i awskey ec2-user@3.84.245.16 "cd /app && git pull && docker build -t my-app . && docker run -d -p 80:80 my-app"
+            ssh -i awskey ec2-user@3.84.245.16 "cd /app && git push && docker build -t my-app . && docker run -d -p 80:80 my-app"
 
 
 
