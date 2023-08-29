@@ -2,7 +2,7 @@ def sum_positive_numbers(numbers):
     total = 0
     for num in numbers:
         if num > 0:
-            total += num+5
+            total += num
     return total
 
 # Get user input for a list of numbers
